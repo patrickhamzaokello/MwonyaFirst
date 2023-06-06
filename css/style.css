@@ -21,7 +21,8 @@
   --buttonTransition: all 0.2s ease;
   --buttonHeight: 3.2rem;
   --colorGreenAccentHsl: 158 100% 23%;
-  --colorTextBlack: rgba(0,0,0,.87);
+  --colorTextBlack: rgba(0, 0, 0, 0.87);
+  --colorBlack: #000;
   --outerGutter: 16px;
   --outerGutter: 1.6rem;
   --outerGutterMedium: 24px;
@@ -92,7 +93,7 @@ html {
 }
 
 .card_type_one .card_one_text {
-  background-color: #370062;
+  background-color: #4b2b80;
 }
 
 .card_type_one .card_one_text .innerText {
@@ -242,14 +243,50 @@ summary {
 
 .bg-white {
   background-color: #fff !important;
-  background-color: var(--colorWhite) !important;
+}
+
+.flex-shrink-none {
+  -ms-flex-negative: 0 !important;
+      flex-shrink: 0 !important;
+}
+
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sb-globalNav__desktopListItem {
+  display: inline-block;
+  padding-left: 2.4rem;
+}
+
+.text-noUnderline {
+  -webkit-text-decoration: none !important;
+  text-decoration: none !important;
+}
+
+.text-upper {
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+}
+
+.text-bold {
+  font-weight: 700 !important;
+}
+
+.text-xxs {
+  font-size: 1.3rem !important;
+}
+
+.sb-globalNav__desktopListItem:first-of-type {
+  padding-left: 0;
 }
 
 .sb-global-gutters {
   padding-left: 1.6rem;
-  padding-left: var(--outerGutter);
   padding-right: 1.6rem;
-  padding-right: var(--outerGutter);
 }
 
 .sb-globalNav__logo {
@@ -261,14 +298,7 @@ summary {
 
 .my3 {
   margin-top: 1.6rem !important;
-  margin-top: var(--space-3) !important;
   margin-bottom: 1.6rem !important;
-  margin-bottom: var(--space-3) !important;
-}
-
-.mr3 {
-  margin-right: 1.6rem !important;
-  margin-right: var(--space-3) !important;
 }
 
 .sb-globalNav__wrapper {
@@ -299,7 +329,6 @@ summary {
 .ml6,
 .mx6 {
   margin-left: 4rem !important;
-  margin-left: var(--space-6) !important;
 }
 
 .items-center {
@@ -325,7 +354,6 @@ summary {
 
 .mr6 {
   margin-right: 4rem !important;
-  margin-right: var(--space-6) !important;
 }
 
 .inline-block {
@@ -349,6 +377,18 @@ svg:not(:root) {
   padding-right: var(--space-2) !important;
 }
 
+.sb-button--default.sb-button--black,
+.sb-button--default.sb-button--rewardsDefault {
+  color: var(--colorTextBlack);
+}
+
+.sb-button--positive.sb-button--black,
+.sb-button--positive.sb-button--rewardsDefault {
+  background-color: var(--colorBlack);
+  border-color: var(--colorBlack);
+  color: white;
+}
+
 .sb-button {
   display: inline-block;
   background: none;
@@ -361,10 +401,32 @@ svg:not(:root) {
   text-align: center;
   -webkit-text-decoration: none;
   text-decoration: none;
-  -webkit-transition: all .2s ease;
-  transition: all .2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
   -webkit-transition: var(--buttonTransition);
   transition: var(--buttonTransition);
+}
+
+a {
+  color: currentColor;
+}
+
+.inline-block {
+  display: inline-block !important;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.hiddenVisually {
+  position: absolute !important;
+  overflow: hidden !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
 }
 
 @media (min-width: 1520px) {
@@ -382,13 +444,13 @@ svg:not(:root) {
   }
 }
 
-@media (min-width: 1024px) {
-  .sb-global-gutters {
-    padding-left: 4rem;
-    padding-right: 4rem;
-  }
-  .lg-mr6 {
-    margin-right: 4rem !important;
+@media (min-width: 1702px) {
+  .sb-globalNav__logo.sb-globalNav--maxWidthLogo {
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
   }
 }
 
@@ -415,6 +477,13 @@ svg:not(:root) {
   }
   .sm {
     font-size: 19px;
+  }
+  .text-xxs {
+    font-size: 1.4rem !important;
+  }
+  .md-py5 {
+    padding-top: 3.2rem !important;
+    padding-bottom: 3.2rem !important;
   }
   .textBlockGutter {
     padding: 0 2.4rem;
@@ -465,11 +534,26 @@ svg:not(:root) {
   .textBlockGutter {
     padding: 0 4rem;
   }
+  .lg-py6 {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+  .sb-global-gutters {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+  .lg-mr6 {
+    margin-right: 4rem !important;
+  }
 }
 
 @media (min-width: 1280px) {
   .textBlockGutter {
     padding: 0 4.8rem;
   }
+}
+
+.mr3 {
+  margin-right: 1.6rem !important;
 }
 /*# sourceMappingURL=style.css.map */
